@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title> Phonebook </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+    <style>
+        body
+        {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-image: url({{ url_for ('static', filename = 'img/Background.jpg') }});
+        }
+    </style>
+
+</head>
+
+<h1> Welcome to your personal Phonebook </h1>
+
+
+<body>
+
+    <p class="text1">To add, search or delete a contact use the buttons below <br>
+    <a href="http://127.0.0.1:5000/Add"><button type="button" class="pure-button" value="Link" > Add Contact</button></a>
+    <a href="http://127.0.0.1:5000/Search"><button type="button" class="pure-button" value="Link" > Search a Contact</button></a> <br><br>
+    <a href="http://127.0.0.1:5000/Delete"><button type="button" class="pure-button" value="Link" > Delete a Contact</button></a> </p>
+
+
+
+</body>
+</html>

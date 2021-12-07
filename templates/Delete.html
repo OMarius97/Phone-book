@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title> Delete a Contact </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename = 'style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+</head>
+
+<h1> Delete a contact </h1>
+
+<body class="background">
+
+    <p class="text1"> Chose the criteria you want to search for</p>
+
+    <div class="text1">
+        <form class="pure-form" method="POST" action="/Delete">
+
+            <label for="name"> Name:
+                <input type="text" name="name" placeholder="Name">
+            </label><br><br>
+
+            <label for="phone"> Phone Number:
+                <input type="text" name="phone" placeholder="Phone">
+            </label><br><br>
+
+            <button type="submit" name="submit" value="Submit" class="pure-button">Submit</button> <br> <br>
+
+        </form>
+
+    </div>
+    <div>
+        {% if result %}
+            <table align="center" class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Nick Name</th>
+                        <th>Company</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Birthday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in result %}
+                        <tr bgcolor="white" class="pure-table">
+                        {% for data in i %}
+                            <td> {{ data }} </td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <div class="text1">
+        <p>Please confirm contact you want to delete adding both name an phone number</p>
+
+        <form class="pure-form" method="POST" action="/Delete">
+
+            <label for="name_confirm"> Name:
+                <input type="text" name="name_confirm" placeholder="Name">&nbsp
+            </label>
+
+            <label for="phone_confirm">&nbsp Phone Number:
+                <input type="text" name="phone_confirm" placeholder="Phone">&nbsp &nbsp
+            </label>
+
+            <button type="submit" name="Confirm" value="confirm" class="pure-button">Confirm</button> <br> <br>
+        </form>
+        {% endif %}
+
+        {% if confirm %}
+        <p class="text1"> The contact has just been deleted </p>
+        {% endif %}
+    </div>
+    <a href="http://127.0.0.1:5000"><button type="button" class="pure-button" value="Link"> Back </button></a>
+</body>
+</html>
