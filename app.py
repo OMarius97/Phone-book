@@ -4,7 +4,7 @@ import pyodbc
 conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
                       'Server=DESKTOP-3JCOP6K;'
                       'Database=PHONEBOOKDB;'
-                      'UID=DESKTOP-3JCOP6K/mariu;'
+                      'UID=DESKTOP-3JCOP6K/marius;'
                       'Trusted_Connection=yes;')
 
 cursor = conn.cursor()
