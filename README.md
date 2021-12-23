@@ -1,4 +1,4 @@
-# Phonebook
+# Phone-book
 
 This is my first programming project, is a common phonebook created using predominantly python with an SQL database integrated. 
 
